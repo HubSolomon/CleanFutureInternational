@@ -17,3 +17,6 @@
 # Temporary
 ~$*
 *.tmp
+
+# Brand assets kept locally, not in the repository
+images/

@@ -14,7 +14,6 @@ Kingdom and operating initially in Ghana.
 | Path | Contents |
 |------|----------|
 | `Files/` | The CFI 2.0 document set (PDF) |
-| `images/` | Brand assets, logos and photography |
 
 ### Document set
 
