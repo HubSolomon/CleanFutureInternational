@@ -1,0 +1,19 @@
+# Credentials — never commit
+.github_token
+*.token
+.env
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Editors
+.vscode/
+.idea/
+*.swp
+
+# Temporary
+~$*
+*.tmp
