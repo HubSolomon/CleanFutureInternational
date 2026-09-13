@@ -22,42 +22,42 @@
       "h": 700
     },
     {
-      "file": "Lifecycle.dc.html",
+      "file": "Pillars.dc.html",
       "x": 3420,
       "y": 0,
       "w": 1000,
       "h": 700
     },
     {
-      "file": "Gates.dc.html",
+      "file": "Divisions.dc.html",
       "x": 0,
       "y": 890,
       "w": 1000,
       "h": 700
     },
     {
-      "file": "Divisions.dc.html",
+      "file": "Lifecycle.dc.html",
       "x": 1140,
       "y": 890,
       "w": 1000,
       "h": 700
     },
     {
-      "file": "Pillars.dc.html",
+      "file": "Gates.dc.html",
       "x": 2280,
       "y": 890,
       "w": 1000,
       "h": 700
     },
     {
-      "file": "MoneyLayers.dc.html",
+      "file": "Principles.dc.html",
       "x": 3420,
       "y": 890,
       "w": 1000,
       "h": 700
     },
     {
-      "file": "HubEconomics.dc.html",
+      "file": "MoneyLayers.dc.html",
       "x": 0,
       "y": 1780,
       "w": 1000,
@@ -71,35 +71,35 @@
       "h": 700
     },
     {
-      "file": "Hub.dc.html",
+      "file": "HubEconomics.dc.html",
       "x": 2280,
       "y": 1780,
       "w": 1000,
       "h": 700
     },
     {
-      "file": "Roadmap24.dc.html",
+      "file": "RedLines.dc.html",
       "x": 3420,
       "y": 1780,
       "w": 1000,
       "h": 700
     },
     {
-      "file": "Horizons.dc.html",
+      "file": "Hub.dc.html",
       "x": 0,
       "y": 2670,
       "w": 1000,
       "h": 700
     },
     {
-      "file": "Principles.dc.html",
+      "file": "Roadmap24.dc.html",
       "x": 1140,
       "y": 2670,
       "w": 1000,
       "h": 700
     },
     {
-      "file": "RedLines.dc.html",
+      "file": "Horizons.dc.html",
       "x": 2280,
       "y": 2670,
       "w": 1000,
@@ -119,28 +119,28 @@
       "x": -320,
       "y": 250,
       "w": 260,
-      "text": "IDENTITY\nWhy CFI exists, the problem it solves, and the equation behind it."
+      "text": "IDENTITY\nWhy CFI exists, the problem it solves, the equation behind it, and the seven capabilities it must build."
     },
     {
       "id": "row-architecture",
       "x": -320,
       "y": 1140,
       "w": 260,
-      "text": "ARCHITECTURE\nHow work is structured, approved and owned."
+      "text": "ARCHITECTURE & DISCIPLINE\nWho is accountable, the twelve stages, the twelve gates, and the rules of sequence."
     },
     {
       "id": "row-money",
       "x": -320,
       "y": 2030,
       "w": 260,
-      "text": "MONEY\nHow projects and the organization are funded \u2014 and what one hub actually earns."
+      "text": "MONEY\nHow projects and the organization are funded, what one hub actually earns, and the refusals that protect it."
     },
     {
-      "id": "row-growth",
+      "id": "row-programme",
       "x": -320,
       "y": 2920,
       "w": 260,
-      "text": "GROWTH & DISCIPLINE\nHow CFI scales, what it commits to, and what is still to build."
+      "text": "PROGRAMME & GROWTH\nThe first programme, the first 24 months, the ten-year horizons, and what is still to build."
     }
   ],
   "launch": {

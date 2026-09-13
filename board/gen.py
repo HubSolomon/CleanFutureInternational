@@ -101,12 +101,12 @@ causes = ["Problems poorly defined","Insufficient evidence of need","Inappropria
 cause_cards = "".join(
   f'<div style="background:#fff;border:1px solid {LINE};border-left:3px solid {CORAL};border-radius:6px;padding:9px 11px;font-size:11.5px;font-weight:700;color:{NAVY};line-height:1.3;">{c}</div>'
   for c in causes)
-old = row([chip("NEED","#FBECE8","#B4482F"), arrow(), chip("PROJECT","#FBECE8","#B4482F"), arrow(),
-           chip("CONSTRUCTION","#FBECE8","#B4482F"), arrow(), chip("HANDOVER","#FBECE8","#B4482F"), arrow(),
-           chip("DECLINE","#FBECE8","#B4482F"), arrow(), chip("FAILURE","#FBECE8","#B4482F")], gap=0, grow=False)
-new = row([chip("NEED",BLUE), arrow(), chip("EVIDENCE","#1478B8"), arrow(), chip("SOLUTION","#16A8C0"), arrow(),
-           chip("CAPITAL",AQUA), arrow(), chip("DELIVERY",TEAL), arrow(), chip("FUNCTION","#2AA471"), arrow(),
-           chip("REINVEST",GREEN)], gap=0, grow=False)
+old = row([chip("NEED","#FBECE8","#B4482F",fs=10), arrow(), chip("PROJECT","#FBECE8","#B4482F",fs=10), arrow(),
+           chip("CONSTRUCTION","#FBECE8","#B4482F",fs=10), arrow(), chip("HANDOVER","#FBECE8","#B4482F",fs=10), arrow(),
+           chip("DECLINE","#FBECE8","#B4482F",fs=10), arrow(), chip("FAILURE","#FBECE8","#B4482F",fs=10)], gap=0, grow=False)
+new = row([chip("NEED",BLUE,fs=10), arrow(), chip("EVIDENCE","#1478B8",fs=10), arrow(), chip("SOLUTION","#1A85BC",fs=10), arrow(),
+           chip("CAPITAL","#169FC2",fs=10), arrow(), chip("DELIVERY",AQUA,fs=10), arrow(), chip("FUNCTION","#12A79A",fs=10), arrow(),
+           chip("MAINTENANCE",TEAL,fs=10), arrow(), chip("MEASUREMENT","#2AA471",fs=10), arrow(), chip("REINVEST",GREEN,fs=10)], gap=0, grow=False)
 body = f'''
   {p("Infrastructure does not fail for want of money alone. Twelve recurring causes — every one of them institutional rather than technical.", 14, "#2B3B49")}
   <div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px;">{cause_cards}</div>
@@ -167,16 +167,16 @@ gates = [("0","Problem","Is there a meaningful problem?",BLUE),("1","Evidence","
  ("8","Commissioning","Does the infrastructure actually work?","#189E7D"),("9","Operations","Is a responsible operator and O&amp;M system in place?","#2AA471"),
  ("10","Impact","Is the intended result being achieved?",GREEN),("11","Scale","Is there sufficient evidence to replicate?",NAVY)]
 rows_ = "".join(
- f'''<div style="display:flex;gap:12px;align-items:center;padding:7px 0;border-bottom:1px solid {LINE};">
-   <div style="width:26px;height:26px;border-radius:50%;background:{c};color:#fff;font-size:12px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;">{n}</div>
+ f'''<div style="display:flex;gap:11px;align-items:center;padding:4px 0;border-bottom:1px solid {LINE};">
+   <div style="width:22px;height:22px;border-radius:50%;background:{c};color:#fff;font-size:11px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;">{n}</div>
    <div style="width:120px;flex-shrink:0;font-size:13px;font-weight:900;color:{NAVY};">{t}</div>
    <div style="font-size:12.5px;color:#42535F;">{q}</div>
  </div>''' for n,t,q,c in gates)
 body = f'''
-  {p("Each gate is a single question that must be answered affirmatively, with evidence, before a project may proceed. A gate that cannot be passed is not a delay — it is the model working.", 14, "#2B3B49")}
+  {p("Each gate is one question, answered with evidence, before a project may proceed. A gate that cannot be passed is not a delay — it is the model working.", 13.5, "#2B3B49")}
   <div style="flex-grow:1;">{rows_}</div>
   <div style="background:{SAND2};border-radius:8px;padding:12px 16px;font-size:12.5px;color:{NAVY};font-weight:700;">Gates 3 and 4 are the ones most development projects skip. No construction approval without a named operator and a funded operating plan.</div>'''
-shell("Gates.dc.html", "Part IV · Delivery system", TEAL, "Section 13", "Twelve approval gates", body)
+shell("Gates.dc.html", "Part IV · Delivery system", TEAL, "Section 13", "Twelve approval gates (0\u201311)", body)
 
 # ============ 6. DIVISIONS ============
 divs = [("CFI Community","Problems, people, partnership",BLUE),("CFI Engineering","Technical solution and quality","#1583C0"),
@@ -243,10 +243,11 @@ shell("MoneyLayers.dc.html", "Part V · Finance", GREEN, "Volume II · Section 0
 bars = [("25/day","−33.5k",-33.5,CORAL),("50/day","−15.2k",-15.2,"#D9674F"),("71/day","0",0,AMBER),
         ("100/day","+21.3k",21.3,GREEN),("200/day","+94.3k",94.3,"#2AA471"),("300/day","+167.3k",167.3,TEAL)]
 mx=180.0
+CH=104
 def bar(lbl,val,v,c):
-    up = v>0; hgt = max(3, abs(v)/mx*150)
-    top = f'<div style="height:{150-hgt:.0f}px;"></div><div style="height:{hgt:.0f}px;background:{c};border-radius:4px 4px 0 0;"></div><div style="height:150px;"></div>' if up \
-        else f'<div style="height:150px;"></div><div style="height:{hgt:.0f}px;background:{c};border-radius:0 0 4px 4px;"></div><div style="height:{150-hgt:.0f}px;"></div>'
+    up = v>0; hgt = max(3, abs(v)/mx*CH)
+    top = f'<div style="height:{CH-hgt:.0f}px;"></div><div style="height:{hgt:.0f}px;background:{c};border-radius:4px 4px 0 0;"></div><div style="height:{CH}px;"></div>' if up \
+        else f'<div style="height:{CH}px;"></div><div style="height:{hgt:.0f}px;background:{c};border-radius:0 0 4px 4px;"></div><div style="height:{CH-hgt:.0f}px;"></div>'
     return (f'<div style="display:flex;flex-direction:column;align-items:center;gap:5px;flex-grow:1;">'
             f'<div style="font-size:11px;font-weight:900;color:{c};">{val}</div>'
             f'<div style="width:100%;display:flex;flex-direction:column;">{top}</div>'
@@ -254,19 +255,19 @@ def bar(lbl,val,v,c):
 chart = '<div style="display:flex;gap:10px;align-items:flex-end;flex-grow:1;">' + "".join(bar(*b) for b in bars) + "</div>"
 body = f'''
   {p("One hub, one year, Ghana cedis — modelled from the board's own assumptions with renewal and core cost added. Break-even is 71 paying users a day at GHS 2.", 14, "#2B3B49")}
-  {row([
+  {grid([
     card(f'<div style="font-size:26px;font-weight:900;color:{NAVY};line-height:1;">27,600</div>' + p("Direct operating cost",11.5,MUTED), BLUE, "13px 15px"),
     card(f'<div style="font-size:26px;font-weight:900;color:{NAVY};line-height:1;">20,000</div>' + p("Renewal provision",11.5,MUTED), AQUA, "13px 15px"),
     card(f'<div style="font-size:26px;font-weight:900;color:{NAVY};line-height:1;">4,140</div>' + p("Cost recovery (15%)",11.5,MUTED), TEAL, "13px 15px"),
     card(f'<div style="font-size:26px;font-weight:900;color:{CORAL};line-height:1;">51,740</div>' + p("Full annual cost",11.5,MUTED), CORAL, "13px 15px"),
-  ], grow=False)}
+  ], cols=4, grow=False)}
   <div style="font-size:11px;font-weight:900;letter-spacing:0.14em;text-transform:uppercase;color:{MUTED};">Annual surplus or deficit by daily footfall</div>
   {chart}
-  <div style="background:{SAND2};border-radius:8px;padding:11px 16px;font-size:12.5px;color:{NAVY};font-weight:700;">Capital of 250,000–400,000 repays in 12–19 years at 100/day, and under two years at 500/day. Same building, entirely different investment.</div>'''
-shell("HubEconomics.dc.html", "Part C · Economics", AMBER, "Volume III · Section 09", "Unit economics of one hub", body)
+  <div style="background:{SAND2};border-radius:8px;padding:11px 16px;font-size:12.5px;color:{NAVY};font-weight:700;">Capital of 250,000–400,000 repays in 12–19 years at 100/day, and in under three years at 300/day. Same building, entirely different investment.</div>'''
+shell("HubEconomics.dc.html", "Volume III · Economics", AMBER, "Volume III · Section 09", "Unit economics of one hub", body)
 
 # ============ 10. CATEGORIES ============
-cats = [("A","Revenue-Sustainable","Lorry stations and large markets","Legitimate revenue covers operating and maintenance in full.","Capital only",GREEN),
+cats = [("A","Revenue-Sustainable","Lorry and bus stations","Legitimate revenue covers operating and maintenance in full.","Capital only",GREEN),
         ("B","Partially Revenue-Supported","Community centres, smaller markets","Real income, but grants or subsidy remain necessary — especially for renewal.","Capital + stated subsidy",AQUA),
         ("C","Social Infrastructure","Every school hub","Significant social value, little realistic commercial revenue.","Capital + full lifetime cost",AMBER)]
 cds = [card(f'<div style="font-size:38px;font-weight:900;color:{c};line-height:1;">{L}</div>' + h(t,13.5,NAVY,4)
@@ -292,30 +293,30 @@ sites = [("Basic, JHS &amp; SHS","Highest need, lowest ability to pay","Type C",
          ("Leisure areas","Seasonal — needs testing","Untested",MUTED)]
 scards = [card(h(n,12.5,NAVY,4) + p(d,11.5) + f'<div style="margin-top:7px;font-size:11px;font-weight:900;color:{c};">{t}</div>', c, "12px 14px") for n,d,t,c in sites]
 body = f'''
-  {p("The first CFI programme. Components grouped by what each is for — because the three categories fail differently: service failures are visible, continuity failures are silent.", 14, "#2B3B49")}
-  {row([
+  {p("The first CFI programme. Components grouped by what each is for — because they fail differently: service failures are visible and get fixed, continuity failures are silent, and revenue failures show up only in the accounts.", 14, "#2B3B49")}
+  {grid([
     card(h("SERVICE — what users come for",12,BLUE,7) + lst(svc,BLUE), BLUE),
     card(h("CONTINUITY — what keeps it open",12,TEAL,7) + lst(con,TEAL), TEAL),
     card(h("REVENUE — what pays for it",12,AMBER,7) + lst(rev,AMBER), AMBER),
-  ])}
+  ], cols=3)}
   <div style="font-size:11px;font-weight:900;letter-spacing:0.14em;text-transform:uppercase;color:{MUTED};">Where hubs are sited — and what each one is</div>
   {grid(scards, cols=4, grow=False)}
   <div style="background:{SAND2};border-radius:8px;padding:11px 16px;font-size:12.5px;color:{NAVY};font-weight:700;">These four sites do not share one financial model. Treating them as one product with one revenue line is the central modelling error to avoid.</div>'''
 shell("Hub.dc.html", "Part VI · Operating context", BLUE, "Volume I · Section 19", "The CFI Sustainable Sanitation Hub", body)
 
 # ============ 12. 24-MONTH ROADMAP ============
-ph = [("0–3","Establish the institution","Governance, legal review, financial controls, safeguarding, procurement, technical standards. Set the cost-recovery rate. Register the Ghana branch.","Know the real number CFI needs",BLUE),
-      ("3–6","Measure, then classify","Footfall and willingness-to-pay study at three sites. Baseline and condition survey. Classify each site Type A, B or C. Prototype design, independently reviewed.","Layer 3 covered before Project 001",AQUA),
-      ("6–12","Fund one hub properly","Raise Layer 1 with recovery included and Layer 2 with its renewal provision, as two separate asks. Operator agreement signed before construction.","An asset funded for its life",TEAL),
-      ("12–24","Prove it, then replicate","Commission, operate, publish real functionality, cost and revenue data. Replace every modelled number with a measured one.","A second project funded on evidence",GREEN)]
+ph = [("0–3","Establish the institution","Governance, financial controls, safeguarding, procurement and technical standards. Set the cost-recovery rate. Register the Ghana branch.","a funding case that survives scrutiny",BLUE),
+      ("3–6","Measure, then classify","Footfall and willingness-to-pay study at three sites. Baseline and condition survey. Classify each site Type A, B or C.","Gates 1, 2 and 5",AQUA),
+      ("6–12","Fund one hub properly","Raise Layer 1 with recovery included and Layer 2 with its renewal provision, as two separate asks. Operator agreement signed first.","Gates 3 and 4 — and construction",TEAL),
+      ("12–24","Prove it, then replicate","Commission, operate, and publish real functionality, cost and revenue data. Replace every modelled number with a measured one.","the case for hubs two and three",GREEN)]
 rows_ = "".join(
  f'''<div style="display:flex;gap:14px;align-items:stretch;">
    <div style="width:96px;flex-shrink:0;background:{c};border-radius:9px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:10px 6px;">
      <div style="font-size:17px;font-weight:900;color:#fff;">{m}</div>
      <div style="font-size:9px;font-weight:900;letter-spacing:0.12em;color:#EAF6FA;margin-top:3px;">MONTHS</div>
    </div>
-   <div style="flex-grow:1;background:#fff;border:1px solid {LINE};border-radius:9px;padding:12px 15px;">
-     {h(t,13.5)}{p(d,12)}
+   <div style="flex-grow:1;background:#fff;border:1px solid {LINE};border-radius:9px;padding:10px 14px;">
+     {h(t,13,None,4)}{p(d,11.5,lh=1.45)}
      <div style="font-size:11.5px;font-weight:900;color:{c};margin-top:6px;">Unlocks: {u}</div>
    </div>
  </div>''' for m,t,d,u,c in ph)
@@ -387,10 +388,10 @@ def rl(items):
       </div>''' for i in items)
 body = f'''
   {p("A model is defined as much by its refusals as by its ambitions. Each of these describes a decision that is easy to make under pressure — a deadline, a funding window, a photograph.", 14, "#2B3B49")}
-  {row([
+  {grid([
     card(h("Project red lines",13,CORAL,9) + rl(proj), CORAL),
     card(h("Funding red lines",13,AMBER,9) + rl(fund), AMBER),
-  ])}
+  ], cols=2)}
   <div style="background:{SAND2};border-radius:8px;padding:11px 16px;font-size:12.5px;color:{NAVY};font-weight:700;">Each refusal has a matching control — an approval gate, a financial rule, a governance requirement. A refusal without a control is only an intention.</div>'''
 shell("RedLines.dc.html", "Part IX · Identity", CORAL, "Volumes I &amp; II", "What CFI will not do", body)
 
@@ -409,23 +410,23 @@ body = f'''
     <div style="font-size:10px;font-weight:900;letter-spacing:0.18em;text-transform:uppercase;color:#8FE3E8;margin-bottom:8px;">The order that matters</div>
     <div style="font-size:15px;line-height:1.45;color:#F2FAFC;">Unrestricted income first, because it is the only money that can be spent on becoming fundable. Then measure. Then build one hub — properly.</div>
   </div>'''
-shell("NextSteps.dc.html", "Part D · Delivery", TEAL, "Across all three volumes", "What is still to build", body)
+shell("NextSteps.dc.html", "Volume III · Delivery", TEAL, "Across all three volumes", "What is still to build", body)
 
 # ============ canvas.json ============
 W,H,GX,GY = 1000,700,140,190
-order = ["Main","Problem","Equation","Lifecycle",
-         "Gates","Divisions","Pillars","MoneyLayers",
-         "HubEconomics","Categories","Hub","Roadmap24",
-         "Horizons","Principles","RedLines","NextSteps"]
+order = ["Main","Problem","Equation","Pillars",
+         "Divisions","Lifecycle","Gates","Principles",
+         "MoneyLayers","Categories","HubEconomics","RedLines",
+         "Hub","Roadmap24","Horizons","NextSteps"]
 arts=[]
 for i,name in enumerate(order):
     r,c = divmod(i,4)
     arts.append({"file": f"{name}.dc.html", "x": c*(W+GX), "y": r*(H+GY), "w": W, "h": H})
 notes=[
- {"id":"row-identity","x":-320,"y":250,"w":260,"text":"IDENTITY\nWhy CFI exists, the problem it solves, and the equation behind it."},
- {"id":"row-architecture","x":-320,"y":1140,"w":260,"text":"ARCHITECTURE\nHow work is structured, approved and owned."},
- {"id":"row-money","x":-320,"y":2030,"w":260,"text":"MONEY\nHow projects and the organization are funded — and what one hub actually earns."},
- {"id":"row-growth","x":-320,"y":2920,"w":260,"text":"GROWTH & DISCIPLINE\nHow CFI scales, what it commits to, and what is still to build."},
+ {"id":"row-identity","x":-320,"y":250,"w":260,"text":"IDENTITY\nWhy CFI exists, the problem it solves, the equation behind it, and the seven capabilities it must build."},
+ {"id":"row-architecture","x":-320,"y":1140,"w":260,"text":"ARCHITECTURE & DISCIPLINE\nWho is accountable, the twelve stages, the twelve gates, and the rules of sequence."},
+ {"id":"row-money","x":-320,"y":2030,"w":260,"text":"MONEY\nHow projects and the organization are funded, what one hub actually earns, and the refusals that protect it."},
+ {"id":"row-programme","x":-320,"y":2920,"w":260,"text":"PROGRAMME & GROWTH\nThe first programme, the first 24 months, the ten-year horizons, and what is still to build."},
 ]
 pathlib.Path("canvas.json").write_text(json.dumps(
   {"artboards":arts,"annotations":notes,"launch":{"view":"canvas"}}, indent=2), encoding="utf-8")
