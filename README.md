@@ -14,6 +14,7 @@ Kingdom and operating initially in Ghana.
 | Path | Contents |
 |------|----------|
 | `Files/` | The CFI 2.0 document set (PDF) |
+| `board/` | Source for the CFI 2.0 Operating Model Board — 16 artboards on one canvas |
 
 ### Document set
 
@@ -28,9 +29,24 @@ How CFI funds its projects and how CFI funds itself: the three money layers, inc
 recovery, reserves policy, the funding pipeline, restricted-fund traceability, funding risks and red lines,
 and the 24-month funding plan.
 
-> **Note on figures.** All monetary figures in Volume II are clearly labelled worked illustrations using
-> placeholder rates, included to demonstrate how the arithmetic behaves. They must be replaced with CFI's
-> actual cost base before the document is used with a funder, trustee or auditor.
+**Volume III — CFI WASH: Sanitation Hub Investment Case** (17 pages)
+An audit and redesign of the original Miro business model, rebuilt on the CFI 2.0 architecture: what the
+board gets right, what has to change, the numbers that do not hold, gate status, the three money layers
+applied to one hub, corrected unit economics, break-even and sensitivity, sustainability classification,
+the revenue-validation study and the re-sequenced next steps.
+
+> **Note on figures.** All monetary figures in Volumes II and III are clearly labelled worked illustrations
+> using placeholder or board-derived rates, included to demonstrate how the arithmetic behaves. They must be
+> replaced with CFI's actual cost base and validated footfall data before either document is used with a
+> funder, trustee or auditor.
+
+### The board
+
+`board/` holds the source for the **CFI 2.0 Operating Model Board** — the whole model across sixteen frames:
+identity, the problem, the strategic equation, the lifecycle, the twelve gates, the six divisions, the seven
+pillars, the three money layers, hub economics, sustainability categories, the Sanitation Hub, the 24-month
+roadmap, the ten-year horizons, the operating principles, the red lines and what is still to build.
+Each `.dc.html` file is one frame; `canvas.json` lays them out; `gen.py` regenerates them all.
 
 ---
 

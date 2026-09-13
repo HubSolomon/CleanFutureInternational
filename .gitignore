@@ -20,3 +20,6 @@
 
 # Brand assets kept locally, not in the repository
 images/
+
+# App scratch — deliverables live in Files/
+Claude outputs/
